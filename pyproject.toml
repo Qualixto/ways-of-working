@@ -22,6 +22,10 @@ dev = [
 testpaths = ["tests"]
 pythonpath = ["scripts"]
 
+[tool.ruff]
+# Generated from the source notes; code samples there are illustrative.
+extend-exclude = ["docs"]
+
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "S"]
 
