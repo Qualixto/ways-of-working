@@ -2,32 +2,49 @@
 
 # Git Workflow
 
+Pick the simplest branching model that fits how the code is released. Keep `main` always releasable either way.
+
 ---
 
 ## Branch Strategy
 
+### Trunk-based (default)
+
+- `main` — always production-ready; the only long-lived branch
+- Short-lived branches — one per issue, merged into `main` by pull request within days
+- Releases and deployments come from `main`, optionally marked with tags
+
+Use it for libraries, templates, services with one production environment, and small teams. It keeps branches short and avoids work getting stuck waiting to be merged.
+
+### GitFlow (when you need staged environments)
+
 - `main` — production-ready code only
-- `develop` — staging area for integration
+- `develop` — integration branch, deployed continuously to dev
 - Feature branches — new work, merged into `develop`
-- Hotfix branches — critical fixes, merged directly into `main`
+- Hotfix branches — critical fixes, merged directly into `main` and back into `develop`
+
+Use it when changes must pass through separate dev, UAT and production environments, or when releases are batched and signed off. Merge `develop` into `main` often: long-lived differences between the two are where work gets stuck.
 
 ---
 
 ## Branch Naming
 
-Use descriptive names that include ticket IDs and the type of work:
+Start from a ticket, and name the branch after the type of work, using the same types as [Commit Message Standards](../delivery/commit-message-standards.md):
 
-- `feature/<ticket_id>-<short-description>`
-- `bugfix/<ticket_id>-<short-description>`
+- `feat/<ticket_id>-<short-description>`
+- `fix/<ticket_id>-<short-description>`
 - `hotfix/<ticket_id>-<short-description>`
+- `chore/`, `docs/`, `refactor/`, `test/` or `perf/` for everything else
 
 ---
 
 ## Branch Protection
 
-- No direct commits to `main`
-- Require PR review approval before merge
+- No direct commits to `main` (or `develop`)
+- Require a pull request for every change
+- Require PR review approval before merge where there's more than one maintainer
 - Require CI checks to pass before merge
+- Block force pushes and branch deletion
 - Consider signed commits for high-trust environments
 
 ---
