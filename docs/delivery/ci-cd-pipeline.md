@@ -15,13 +15,24 @@ A typical pipeline runs in order:
 3. **Integration tests** — component interactions
 4. **Security scanning** — dependency vulnerabilities, secrets detection
 5. **Build and package**
-6. **Deploy to dev** — continuous from `develop` branch
-7. **Deploy to UAT** — manually triggered for validation
-8. **Deploy to production** — triggered by approved PR merge to `main`
+6. **Deploy** — through the environments below
+
+Every pull request runs stages 1–5. The same checks should run locally, through one shared task runner, so a green local run means a green pipeline.
 
 ---
 
 ## Environments
+
+How code reaches production depends on the [Git Workflow](../delivery/git-workflow.md).
+
+**Trunk-based:**
+
+| Environment | Trigger | Purpose |
+|-------------|---------|---------|
+| Preview | Pull request | Isolated build per branch, e.g. a prefixed schema |
+| Production | Approved merge to `main` | Live deployment |
+
+**GitFlow:**
 
 | Environment | Trigger | Purpose |
 |-------------|---------|---------|
