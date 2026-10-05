@@ -1,0 +1,101 @@
+site_name: Qualixto Ways of Working
+site_description: How Qualixto builds data platforms, from principles to practical standards.
+site_url: https://qualixto.github.io/ways-of-working/
+site_author: Qualixto Ltd
+repo_url: https://github.com/Qualixto/ways-of-working
+repo_name: Qualixto/ways-of-working
+edit_uri: ""
+copyright: >
+  &copy; Qualixto Ltd · Content licensed
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+
+theme:
+  name: material
+  logo: assets/qualixto-icon.svg
+  favicon: assets/favicon.ico
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/qualixto.css
+
+extra:
+  generator: false
+  social:
+    - icon: material/web
+      link: https://qualixto.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/Qualixto
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+
+nav:
+  - Home: index.md
+  - Ways of Working: ways-of-working.md
+  - Principles:
+      - Customer Value First: principles/customer-value-first.md
+      - Simplicity Over Complexity: principles/simplicity-over-complexity.md
+      - Automation By Default: principles/automation-by-default.md
+      - Build Quality In: principles/build-quality-in.md
+      - Ownership: principles/ownership.md
+      - Continuous Improvement: principles/continuous-improvement.md
+  - Pillars:
+      - Technical: pillars/technical-excellence.md
+      - Delivery: pillars/delivery-excellence.md
+      - Quality: pillars/quality-excellence.md
+      - Operational: pillars/operational-excellence.md
+      - Security: pillars/security-excellence.md
+      - Data: pillars/data-excellence.md
+  - Delivery:
+      - Git Workflow: delivery/git-workflow.md
+      - Pull Requests: delivery/pull-request-guidelines.md
+      - Commit Messages: delivery/commit-message-standards.md
+      - CI/CD Pipeline: delivery/ci-cd-pipeline.md
+      - Definition of Done: delivery/definition-of-done.md
+  - Testing:
+      - Testing Pyramid: testing/testing-pyramid.md
+      - Unit Tests: testing/unit-tests.md
+      - Integration Tests: testing/integration-tests.md
+      - End-to-End Tests: testing/end-to-end-tests.md
+  - Standards:
+      - Python: standards/python-standards.md
+      - SQL: standards/sql-standards.md
+      - Documentation: standards/documentation-standards.md
+  - Operations:
+      - Architecture Decision Records: operations/architecture-decision-records.md
+      - Incident Management: operations/incident-management.md
+      - Monitoring and Observability: operations/monitoring-and-observability.md
+  - Security: security/security-and-compliance.md
+  - Metrics:
+      - Engineering Metrics: metrics/engineering-metrics.md
+      - Data Metrics: metrics/data-metrics.md
+  - In Practice: in-practice.md
