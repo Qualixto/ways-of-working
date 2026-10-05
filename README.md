@@ -2,7 +2,7 @@
 
 How Qualixto builds data platforms: six principles, six pillars of engineering excellence, a maturity model to assess against, and the practical standards that make them real.
 
-**Read it at [qualixto.github.io/ways-of-working](https://qualixto.github.io/ways-of-working/).**
+**Read it at [handbook.qualixto.com](https://handbook.qualixto.com).**
 
 ---
 
