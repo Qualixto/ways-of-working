@@ -11,11 +11,11 @@ package = false
 dev = [
     "invoke>=3.0.3",
     "mkdocs>=1.6.1,<2",
-    "mkdocs-material>=9.7.7",
-    "mypy>=2.4.0",
-    "pre-commit>=4.6.2",
-    "pytest>=9.1.1",
-    "ruff>=0.16.10",
+    "mkdocs-material>=9.8.0",
+    "mypy>=2.4.1",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
 ]
 
 [tool.pytest.ini_options]
