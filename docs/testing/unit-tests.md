@@ -28,7 +28,11 @@ Validate the smallest parts of the codebase independently, without external depe
 
 ## Guidance
 
-- Mock external dependencies at boundaries
+- Mock external dependencies at boundaries (the HTTP call, the API client), using the real response shape
+- No network, no credentials, no warehouse: a unit test runs on a fresh laptop with nothing configured
+- Isolate the environment: an autouse fixture clears the environment variables the code reads, so a developer's shell can't change the result
+- Every bug fix comes with a test that fails without the fix
+- Use `parametrize` instead of copy-pasted tests; keep fixtures in the `conftest.py` closest to the tests that use them
 - Test behaviour, not implementation
 - Keep tests small and named clearly
 - Automate on every PR in CI

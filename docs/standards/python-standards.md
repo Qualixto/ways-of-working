@@ -15,9 +15,20 @@ Consistency matters more than personal preference. The goal is a codebase that a
 
 ---
 
+## Default Toolchain
+
+Unless the team already has a working setup, start here:
+
+- **uv** for environments, dependencies and running everything (`uv run`, `uv add`, `uvx` for one-off tools)
+- **`pyproject.toml`** as the single source: Python version, dependencies, and dependency groups for anything not needed at runtime, so deploy images stay lean. Commit the lock file
+- **ruff** for linting and formatting, run before every commit
+- **mypy** in strict mode on shared code
+- **pytest** for tests, see [Unit Tests](../testing/unit-tests.md)
+- Configuration from one place per concern (an environment variable or a config file), never hardcoded per call site
+
 ## Suggested Tooling
 
-These are recommendations, not mandates. Choose what fits the team and enforce it consistently.
+Alternatives, if the team has a reason to differ. Choose what fits and enforce it consistently.
 
 | Tool | Purpose |
 |------|---------|

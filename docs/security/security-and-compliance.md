@@ -4,7 +4,7 @@
 
 Security practices for data teams.
 
-For the full framework, see → [Security Excellence](../pillars/security-excellence.md)
+For the full framework, see → [Security Excellence](../pillars/security-excellence.md). For AI agents working with data, see [Working with AI Agents](../delivery/working-with-ai-agents.md).
 
 ---
 
@@ -14,10 +14,23 @@ For the full framework, see → [Security Excellence](../pillars/security-excell
 - Limit production data access to approved users only
 - Access should be role-based and reviewed periodically
 
+## Personal Data
+
+- Extract and model the least personal data that does the job. If a field is not needed, leave it out at extraction, not later
+- Special-category data (health, ethnicity, gender, disability and similar) needs a recorded decision, with an owner and a lawful basis, before it is extracted or modelled
+- Redacting at extraction is a partial control: a denylist misses new fields, and data written before the control existed still needs cleaning up
+- Hashing an identifier such as an email makes data pseudonymous, not anonymous. Unsalted hashes can be reversed by anyone holding a list of candidates
+- Decide what may go into non-production environments (raw, raw without special-category fields, or masked) and record it before real records are loaded
+- Set retention and deletion rules per dataset, including what happens when a record is deleted at source
+- When in doubt, model the non-sensitive slice and say what was left out
+
 ## Secrets Management
 
 - Never hardcode credentials in code or configuration files
 - Use pipeline secret stores or a vault solution
+- Secrets committed to git are encrypted (for example with SOPS), with only the values encrypted so changes stay reviewable
+- Never paste a secret into chat, a ticket or a prompt. Point to where it lives instead
+- If a secret has been exposed, rotate it; deleting the message is not enough
 - Rotate credentials regularly
 
 ## Dependency Management

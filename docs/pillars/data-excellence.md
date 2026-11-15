@@ -45,6 +45,17 @@ Preferred characteristics:
 - Governed with clear ownership
 - Documented with business context, not just technical detail
 
+Layers:
+- **Staging**: one model per source table, renamed and cast, nothing else
+- **Entities**: one model per business entity, joined across sources on keys
+- **Consumer marts**: shaped for one consumer each, with a data contract that says what it promises
+
+Practices:
+- Match records across sources on exact keys. Fuzzy name matching pairs the wrong records and the errors are hard to spot later
+- Ingest on stable identifiers (field IDs, not display names), so a rename at source doesn't break the pipeline
+- Decide how records deleted at source are handled: incremental loads never see a deletion, so flag them or reload in full
+- Moving data into another system? See [Data Migration](../delivery/data-migration.md)
+
 ---
 
 ## Data Observability

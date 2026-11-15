@@ -17,6 +17,9 @@ Work is not complete at "code written." It is complete when it is ready for prod
 - [ ] Acceptance criteria are met and verified
 - [ ] Peer review is approved
 - [ ] No known regressions introduced
+- [ ] Built and tested from a clean checkout (ignored files can hide what is missing)
+- [ ] Claims are measured, not guessed; an estimate that turned out wrong is corrected
+- [ ] What was not verified is written down (not run against real data, not deployed)
 
 ---
 

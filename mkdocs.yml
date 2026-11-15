@@ -81,6 +81,8 @@ nav:
       - Commit Messages: delivery/commit-message-standards.md
       - CI/CD Pipeline: delivery/ci-cd-pipeline.md
       - Definition of Done: delivery/definition-of-done.md
+      - Data Migration: delivery/data-migration.md
+      - Working with AI Agents: delivery/working-with-ai-agents.md
   - Testing:
       - Testing Pyramid: testing/testing-pyramid.md
       - Unit Tests: testing/unit-tests.md
