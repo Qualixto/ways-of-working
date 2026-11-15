@@ -17,6 +17,8 @@ Run systems professionally throughout their full lifecycle.
 
 ## Service Ownership
 
+Before building infrastructure or a deployment, find out where the thing already runs and who owns it. Two definitions of the same environment cost more than either one.
+
 Every service should have:
 - A named owner
 - Up-to-date documentation

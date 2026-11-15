@@ -12,12 +12,27 @@ Keep PRs small and focused. A PR should do one thing.
 
 Large PRs are harder to review, harder to revert, and harder to understand.
 
+If the scope grows while you work, stop and agree the new scope with the owner rather than extending the PR. Park side quests as their own issue.
+
 ---
 
 ## Writing a Good PR
 
+Every PR starts from an issue. If the organisation also uses a second tracker, the issue has a twin there and each links to the other.
+
+The title follows [Commit Message Standards](../delivery/commit-message-standards.md), for example `fix(ingest): keep records deleted at source out of the mart`. With squash merges the title becomes the commit, so it is the changelog line.
+
+The description, in this order:
+
+1. `Closes #N`, plus the link to the ticket in any second tracker
+2. Why the change is needed
+3. What changed
+4. How it was checked
+5. What was left out or not verified
+
+Also:
+
 - Describe *why* the change is being made, not just *what* changed
-- Link to the relevant ticket or issue
 - Note anything the reviewer should pay particular attention to
 - Include screenshots or examples for UI or data changes
 

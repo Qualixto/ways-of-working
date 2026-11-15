@@ -14,6 +14,8 @@ Good commit messages make the history useful. They explain *why* a change was ma
 <optional body — explain why, not what>
 ```
 
+The body says why, states trade-offs and anything deliberately left out, and calls out any behaviour that changes silently elsewhere (shared defaults, job selections, keys). Reference the issue in lowercase, `refs #12` or `closes #12`, so trackers that parse commit messages pick it up.
+
 ---
 
 ## Types

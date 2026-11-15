@@ -13,6 +13,8 @@ This document captures how the data team works day to day. It sits within the br
 - [Commit Message Standards](delivery/commit-message-standards.md)
 - [CI-CD Pipeline](delivery/ci-cd-pipeline.md)
 - [Definition of Done](delivery/definition-of-done.md)
+- [Data Migration](delivery/data-migration.md)
+- [Working with AI Agents](delivery/working-with-ai-agents.md)
 
 ## Quality
 
